@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Teleopti.Ccc.Sdk.Common.DataTransferObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Teleopti.Ccc.Sdk.Common.DataTransferObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="AuthenticationTypeOptionDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Application" />
+      <xs:enumeration value="Windows" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthenticationTypeOptionDto" nillable="true" type="tns:AuthenticationTypeOptionDto" />
+  <xs:complexType name="ScheduleTagDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q1:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleTagDto" nillable="true" type="tns:ScheduleTagDto" />
+  <xs:complexType name="ArrayOfPayrollBaseExportDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayrollBaseExportDto" nillable="true" type="tns:PayrollBaseExportDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayrollBaseExportDto" nillable="true" type="tns:ArrayOfPayrollBaseExportDto" />
+  <xs:complexType name="PayrollBaseExportDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q2:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AbsencePayrollCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BusinessUnitName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractTime" type="ser:duration" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DayOffPayrollCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmploymentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaidTime" type="ser:duration" />
+          <xs:element minOccurs="0" name="PartTimePercentageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartTimePercentageNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PayrollCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShiftCategoryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TeamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" type="ser:duration" />
+          <xs:element minOccurs="0" name="WorkTime" type="ser:duration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayrollBaseExportDto" nillable="true" type="tns:PayrollBaseExportDto" />
+  <xs:simpleType name="RequestStatusDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Denied" />
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="New" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestStatusDto" nillable="true" type="tns:RequestStatusDto" />
+  <xs:simpleType name="ShiftTradeStatusDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OkByMe" />
+      <xs:enumeration value="OkByBothParts" />
+      <xs:enumeration value="NotValid" />
+      <xs:enumeration value="Referred" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShiftTradeStatusDto" nillable="true" type="tns:ShiftTradeStatusDto" />
+  <xs:simpleType name="MultiplicatorTypeDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OBTime" />
+      <xs:enumeration value="Overtime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MultiplicatorTypeDto" nillable="true" type="tns:MultiplicatorTypeDto" />
+  <xs:complexType name="ArrayOfScheduleTagDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleTagDto" nillable="true" type="tns:ScheduleTagDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleTagDto" nillable="true" type="tns:ArrayOfScheduleTagDto" />
+  <xs:simpleType name="ImportForecastsOptionsDto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ImportWorkload" />
+      <xs:enumeration value="ImportStaffing" />
+      <xs:enumeration value="ImportWorkloadAndStaffing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ImportForecastsOptionsDto" nillable="true" type="tns:ImportForecastsOptionsDto" />
+</xs:schema>

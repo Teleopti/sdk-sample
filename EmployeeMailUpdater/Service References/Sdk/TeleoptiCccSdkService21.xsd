@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.ccc.teleopti.com/sdk/2016/03/" elementFormDefault="qualified" targetNamespace="http://schemas.ccc.teleopti.com/sdk/2016/03/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd8" namespace="http://schemas.ccc.teleopti.com/sdk/2011/07/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:complexType name="GetScheduleChangesSubscriptionSettingsQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q1:QueryDto">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetScheduleChangesSubscriptionSettingsQueryDto" nillable="true" type="tns:GetScheduleChangesSubscriptionSettingsQueryDto" />
+  <xs:complexType name="ArrayOfScheduleChangesSubscriptionsDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleChangesSubscriptionsDto" nillable="true" type="tns:ScheduleChangesSubscriptionsDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleChangesSubscriptionsDto" nillable="true" type="tns:ArrayOfScheduleChangesSubscriptionsDto" />
+  <xs:complexType name="ScheduleChangesSubscriptionsDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q2:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exponent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Listeners" nillable="true" type="tns:ArrayOfScheduleChangesListenerDto" />
+          <xs:element minOccurs="0" name="Modulus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleChangesSubscriptionsDto" nillable="true" type="tns:ScheduleChangesSubscriptionsDto" />
+  <xs:complexType name="ArrayOfScheduleChangesListenerDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleChangesListenerDto" nillable="true" type="tns:ScheduleChangesListenerDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleChangesListenerDto" nillable="true" type="tns:ArrayOfScheduleChangesListenerDto" />
+  <xs:complexType name="ScheduleChangesListenerDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DaysEndFromCurrentDate" type="xs:int" />
+      <xs:element minOccurs="0" name="DaysStartFromCurrentDate" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleChangesListenerDto" nillable="true" type="tns:ScheduleChangesListenerDto" />
+  <xs:complexType name="AddScheduleChangesListenerCommandDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q3:CommandDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Listener" nillable="true" type="tns:ScheduleChangesListenerDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddScheduleChangesListenerCommandDto" nillable="true" type="tns:AddScheduleChangesListenerCommandDto" />
+  <xs:complexType name="RevokeScheduleChangesListenerCommandDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q4:CommandDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListenerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RevokeScheduleChangesListenerCommandDto" nillable="true" type="tns:RevokeScheduleChangesListenerCommandDto" />
+</xs:schema>

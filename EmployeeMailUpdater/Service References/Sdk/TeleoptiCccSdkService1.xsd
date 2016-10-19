@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.ccc.teleopti.com/sdk/2016/01/" elementFormDefault="qualified" targetNamespace="http://schemas.ccc.teleopti.com/sdk/2016/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:complexType name="ArrayOfContractScheduleWeekDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractScheduleWeekDto" nillable="true" type="tns:ContractScheduleWeekDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractScheduleWeekDto" nillable="true" type="tns:ArrayOfContractScheduleWeekDto" />
+  <xs:complexType name="ContractScheduleWeekDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q1:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WeekNumber" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="WorkingDays" nillable="true" type="q2:ArrayOfDayOfWeek" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractScheduleWeekDto" nillable="true" type="tns:ContractScheduleWeekDto" />
+</xs:schema>

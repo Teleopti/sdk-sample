@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.ccc.teleopti.com/sdk/2016/02/" elementFormDefault="qualified" targetNamespace="http://schemas.ccc.teleopti.com/sdk/2016/02/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd8" namespace="http://schemas.ccc.teleopti.com/sdk/2011/07/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetAllPersonPeriodsQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q1:QueryDto">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.ccc.teleopti.com/sdk/2010/04/" minOccurs="0" name="Range" nillable="true" type="q2:DateOnlyPeriodDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllPersonPeriodsQueryDto" nillable="true" type="tns:GetAllPersonPeriodsQueryDto" />
+  <xs:complexType name="GetGroupsForGroupPageForDateRangeQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q3:QueryDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageId" type="ser:guid" />
+          <xs:element xmlns:q4="http://schemas.ccc.teleopti.com/sdk/2010/04/" minOccurs="0" name="QueryRange" nillable="true" type="q4:DateOnlyPeriodDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGroupsForGroupPageForDateRangeQueryDto" nillable="true" type="tns:GetGroupsForGroupPageForDateRangeQueryDto" />
+  <xs:complexType name="GetPeopleByGroupPageGroupForDateRangeQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q5:QueryDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GroupPageGroupId" type="ser:guid" />
+          <xs:element xmlns:q6="http://schemas.ccc.teleopti.com/sdk/2010/04/" minOccurs="0" name="QueryRange" nillable="true" type="q6:DateOnlyPeriodDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeopleByGroupPageGroupForDateRangeQueryDto" nillable="true" type="tns:GetPeopleByGroupPageGroupForDateRangeQueryDto" />
+  <xs:complexType name="GetPersonPeriodsByPersonIdQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q7:QueryDto">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PersonIdCollection" nillable="true" type="q8:ArrayOfguid" />
+          <xs:element xmlns:q9="http://schemas.ccc.teleopti.com/sdk/2010/04/" minOccurs="0" name="Range" nillable="true" type="q9:DateOnlyPeriodDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonPeriodsByPersonIdQueryDto" nillable="true" type="tns:GetPersonPeriodsByPersonIdQueryDto" />
+</xs:schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.ccc.teleopti.com/sdk/2013/03/" elementFormDefault="qualified" targetNamespace="http://schemas.ccc.teleopti.com/sdk/2013/03/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd8" namespace="http://schemas.ccc.teleopti.com/sdk/2011/07/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:complexType name="GetPeopleOptionalValuesByPersonIdQueryDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q1:QueryDto">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PersonIdCollection" nillable="true" type="q2:ArrayOfguid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeopleOptionalValuesByPersonIdQueryDto" nillable="true" type="tns:GetPeopleOptionalValuesByPersonIdQueryDto" />
+  <xs:complexType name="ArrayOfPersonOptionalValuesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonOptionalValuesDto" nillable="true" type="tns:PersonOptionalValuesDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonOptionalValuesDto" nillable="true" type="tns:ArrayOfPersonOptionalValuesDto" />
+  <xs:complexType name="PersonOptionalValuesDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q3:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OptionalValueCollection" nillable="true" type="tns:ArrayOfOptionalValueDto" />
+          <xs:element minOccurs="0" name="PersonId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonOptionalValuesDto" nillable="true" type="tns:PersonOptionalValuesDto" />
+  <xs:complexType name="ArrayOfOptionalValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionalValueDto" nillable="true" type="tns:OptionalValueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOptionalValueDto" nillable="true" type="tns:ArrayOfOptionalValueDto" />
+  <xs:complexType name="OptionalValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OptionalValueDto" nillable="true" type="tns:OptionalValueDto" />
+  <xs:complexType name="SetSchedulePeriodWorktimeOverrideCommandDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q4:CommandDto">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.ccc.teleopti.com/sdk/2010/04/" minOccurs="0" name="Date" nillable="true" type="q5:DateOnlyDto" />
+          <xs:element minOccurs="0" name="PeriodTimeInMinutes" type="xs:double" />
+          <xs:element minOccurs="0" name="PersonId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetSchedulePeriodWorktimeOverrideCommandDto" nillable="true" type="tns:SetSchedulePeriodWorktimeOverrideCommandDto" />
+  <xs:complexType name="SendPushMessageToPeopleCommandDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q6:CommandDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowReply" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Recipients" nillable="true" type="q7:ArrayOfguid" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReplyOptions" nillable="true" type="q8:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendPushMessageToPeopleCommandDto" nillable="true" type="tns:SendPushMessageToPeopleCommandDto" />
+  <xs:complexType name="SetPersonOptionalValuesForPersonCommandDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.ccc.teleopti.com/sdk/2011/07/" base="q9:CommandDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OptionalValueCollection" nillable="true" type="tns:ArrayOfOptionalValueDto" />
+          <xs:element minOccurs="0" name="PersonId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetPersonOptionalValuesForPersonCommandDto" nillable="true" type="tns:SetPersonOptionalValuesForPersonCommandDto" />
+</xs:schema>

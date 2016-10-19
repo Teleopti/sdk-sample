@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf78f2cc-d404-446d-854b-a6ab094be4ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCCCSdkService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TeleoptiCccSdkService.xsd" MetadataType="Schema" ID="c10a5489-4550-46ca-a9d6-f3dd75a4612a" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd11" />
+    <MetadataFile FileName="TeleoptiCccSdkService1.xsd" MetadataType="Schema" ID="b43b400d-0d44-4a07-8bd3-a175c4d8de9f" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd21" />
+    <MetadataFile FileName="TeleoptiCccSdkService2.xsd" MetadataType="Schema" ID="a6aabae6-ebe4-405a-a8a5-f0ea6d1255ce" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd16" />
+    <MetadataFile FileName="TeleoptiCccSdkService3.xsd" MetadataType="Schema" ID="3d4ddbdf-6035-4bf6-82dd-1a648980ba01" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TeleoptiCccSdkService4.xsd" MetadataType="Schema" ID="11d69729-e94b-406a-b504-e9e195d3cf0c" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TeleoptiCccSdkService5.xsd" MetadataType="Schema" ID="aab0707e-c12e-4078-bb2f-dc8d29f738f6" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TeleoptiCccSdkService6.xsd" MetadataType="Schema" ID="7816ccae-0f45-47b5-8ebb-778b74bc6dc9" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TeleoptiCccSdkService7.xsd" MetadataType="Schema" ID="6a5eb593-4da0-4b72-8bef-b0cff8b59229" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TeleoptiCccSdkService8.xsd" MetadataType="Schema" ID="94275c00-1c6b-46d4-aeaa-0b5f1d7c70b6" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TeleoptiCccSdkService9.xsd" MetadataType="Schema" ID="1453b42b-64a9-43fa-9d70-ef7b3cf91260" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd6" />
+    <MetadataFile FileName="TeleoptiCccSdkService10.xsd" MetadataType="Schema" ID="96117668-0604-4521-afdc-a85d74f0c516" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd7" />
+    <MetadataFile FileName="TeleoptiCccSdkService11.xsd" MetadataType="Schema" ID="14528bff-51e1-4931-8b11-71ac6047adf1" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd8" />
+    <MetadataFile FileName="TeleoptiCccSdkService12.xsd" MetadataType="Schema" ID="47fc693c-0b21-4645-9401-ff593c1d1c21" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd9" />
+    <MetadataFile FileName="TeleoptiCccSdkService.wsdl" MetadataType="Wsdl" ID="ae247367-b3f2-422b-9252-2b099a39e394" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?wsdl" />
+    <MetadataFile FileName="TeleoptiCccSdkService13.xsd" MetadataType="Schema" ID="867a1647-9a25-4884-b273-5b2b7fd4670c" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd13" />
+    <MetadataFile FileName="TeleoptiCccSdkService14.xsd" MetadataType="Schema" ID="6bc7246f-a8cd-4d5c-8126-814c1ddb7652" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd10" />
+    <MetadataFile FileName="TeleoptiCccSdkService15.xsd" MetadataType="Schema" ID="eb6761ab-40be-4d1e-a01a-df1f2a20627c" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd20" />
+    <MetadataFile FileName="TeleoptiCccSdkService.disco" MetadataType="Disco" ID="324d0d52-f858-4b8e-a89d-8698c7a78c36" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?disco" />
+    <MetadataFile FileName="TeleoptiCccSdkService16.xsd" MetadataType="Schema" ID="d1763456-d46a-4b04-ae18-80eebc09567b" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd15" />
+    <MetadataFile FileName="TeleoptiCccSdkService1.wsdl" MetadataType="Wsdl" ID="41dec400-6b6c-4655-8318-c706c7f8c998" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TeleoptiCccSdkService17.xsd" MetadataType="Schema" ID="2c2d5b4e-f9af-4554-804f-b05667456daa" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd18" />
+    <MetadataFile FileName="TeleoptiCccSdkService18.xsd" MetadataType="Schema" ID="b1a4f370-8484-4943-862a-fcf1f22dbb69" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd12" />
+    <MetadataFile FileName="TeleoptiCccSdkService19.xsd" MetadataType="Schema" ID="51fc83a2-9eda-4a12-941d-fdccbfe39492" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd22" />
+    <MetadataFile FileName="TeleoptiCccSdkService20.xsd" MetadataType="Schema" ID="17cdcef8-2a9e-49f2-803e-fb83df28e859" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd17" />
+    <MetadataFile FileName="TeleoptiCccSdkService21.xsd" MetadataType="Schema" ID="b0950032-d6e3-4db6-afb8-184b0263703c" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd14" />
+    <MetadataFile FileName="TeleoptiCccSdkService22.xsd" MetadataType="Schema" ID="f0a43244-dbef-4d90-bf31-6b7ae107c32e" SourceId="1" SourceUrl="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd19" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.ccc.teleopti.com/sdk/2010/05/" elementFormDefault="qualified" targetNamespace="http://schemas.ccc.teleopti.com/sdk/2010/05/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd0" namespace="http://schemas.ccc.teleopti.com/sdk/2010/04/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd21" namespace="http://schemas.ccc.teleopti.com/sdk/2016/01/" />
+  <xs:import schemaLocation="https://teleoptiwfm-demo.teleopticloud.com/SDK/TeleoptiCccSdkService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Teleopti.Interfaces.Domain" />
+  <xs:complexType name="WorkflowControlSetDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q1:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowedPreferenceActivity" nillable="true" type="q1:ActivityDto" />
+          <xs:element minOccurs="0" name="AllowedPreferenceDayOffs" nillable="true" type="q1:ArrayOfDayOffInfoDto" />
+          <xs:element minOccurs="0" name="AllowedPreferenceShiftCategories" nillable="true" type="q1:ArrayOfShiftCategoryDto" />
+          <xs:element minOccurs="0" name="PreferenceInputPeriod" nillable="true" type="q1:DateOnlyPeriodDto" />
+          <xs:element minOccurs="0" name="PreferencePeriod" nillable="true" type="q1:DateOnlyPeriodDto" />
+          <xs:element minOccurs="0" name="StudentAvailabilityInputPeriod" nillable="true" type="q1:DateOnlyPeriodDto" />
+          <xs:element minOccurs="0" name="StudentAvailabilityPeriod" nillable="true" type="q1:DateOnlyPeriodDto" />
+          <xs:element minOccurs="0" name="AllowedPreferenceAbsences" nillable="true" type="q1:ArrayOfAbsenceDto" />
+          <xs:element minOccurs="0" name="SchedulesPublishedToDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowControlSetDto" nillable="true" type="tns:WorkflowControlSetDto" />
+  <xs:complexType name="ArrayOfActivityRestrictionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRestrictionDto" nillable="true" type="tns:ActivityRestrictionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivityRestrictionDto" nillable="true" type="tns:ArrayOfActivityRestrictionDto" />
+  <xs:complexType name="ActivityRestrictionDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q2:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activity" nillable="true" type="q2:ActivityDto" />
+          <xs:element minOccurs="0" name="EndTimeLimitation" type="q2:TimeLimitationDto" />
+          <xs:element minOccurs="0" name="StartTimeLimitation" type="q2:TimeLimitationDto" />
+          <xs:element minOccurs="0" name="WorkTimeLimitation" type="q2:TimeLimitationDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivityRestrictionDto" nillable="true" type="tns:ActivityRestrictionDto" />
+  <xs:complexType name="ArrayOfContractScheduleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractScheduleDto" nillable="true" type="tns:ContractScheduleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractScheduleDto" nillable="true" type="tns:ArrayOfContractScheduleDto" />
+  <xs:complexType name="ContractScheduleDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q3:Dto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+          <xs:element xmlns:q4="http://schemas.ccc.teleopti.com/sdk/2016/01/" minOccurs="0" name="Weeks" nillable="true" type="q4:ArrayOfContractScheduleWeekDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractScheduleDto" nillable="true" type="tns:ContractScheduleDto" />
+  <xs:complexType name="ArrayOfPayrollResultDetailDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayrollResultDetailDto" nillable="true" type="tns:PayrollResultDetailDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayrollResultDetailDto" nillable="true" type="tns:ArrayOfPayrollResultDetailDto" />
+  <xs:complexType name="PayrollResultDetailDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.ccc.teleopti.com/sdk/2010/04/" base="q5:Dto">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Teleopti.Interfaces.Domain" minOccurs="0" name="DetailLevel" type="q6:DetailLevel" />
+          <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExceptionStackTrace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayrollResultDetailDto" nillable="true" type="tns:PayrollResultDetailDto" />
+</xs:schema>

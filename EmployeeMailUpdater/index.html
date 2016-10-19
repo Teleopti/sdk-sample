@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Updater</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        var username, password, businessUnit, tenant;
+        $(function () {
+            var displayTeamList = function () {
+            	$('#team-list-page').show();
+            	$('#team-list-page').empty();
+
+            	$.ajax({
+            		type: "GET",
+            		url: 'api/employee',
+            		headers: {
+            			'X-Tenant': tenant,
+            			'X-UserName': username,
+            			'X-Password': password,
+						'X-BusinessUnit': businessUnit
+            		},
+            		success: function (response) {
+            			for (var i = 0; i < response.length; i++) {
+            				$('#team-list-page').append('<div><input value="' + response[i].Email + '" type="email" /><span>' + response[i].Name + '</span></div>')
+            			}
+            		},
+            		dataType: 'json',
+            		contentType: 'application/json; charset=utf-8'
+            	})
+            }
+            var selectBusinessUnit = function (businessUnits) {
+                $('#business-unit-page').show();
+                if ($('#business-unit-page.button').length > 0) return;
+
+                for (var i = 0; i < businessUnits.length; i++) {
+                    $('#business-unit-page').append('<button data-bu-id="' + businessUnits[i].Id + '">' + businessUnits[i].Name + '</button>');
+                }
+                $('#business-unit-page').on('click', 'button', function (e) {
+                	businessUnit = $(this).attr('data-bu-id');
+                    $('#business-unit-page').hide();
+                    displayTeamList();
+                });
+            };
+            $('#logon').click(function () {
+                username = $('#username').val();
+                password = $('#password').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'api/authenticate',
+                    data: JSON.stringify({ UserName: username, Password: password }),
+                    success: function (response) {
+                        if (response.IsSuccessful) {
+                        	$('#logon-page').hide();
+                        	tenant = response.Tenant;
+                            selectBusinessUnit(response.AvailableBusinessUnits);
+                        }
+                    },
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="logon-page">
+        <input type="text" id="username" />
+        <input type="password" id="password" />
+        <button id="logon">Log on</button>
+    </div>
+    <div id="business-unit-page" style="display: none;">
+
+    </div>
+    <div id="team-list-page" style="display: none;">
+
+    </div>
+</body>
+</html>
