@@ -28,7 +28,7 @@ namespace EmployeeMailUpdater.Controllers
 		public string Name;
 	}
 	
-	public class HttpUserAgentMessageInspector : IClientMessageInspector
+	public class HeaderCredentialsMessageInspector : IClientMessageInspector
 	{
 		public void AfterReceiveReply(ref Message reply, object correlationState)
 		{
@@ -43,7 +43,7 @@ namespace EmployeeMailUpdater.Controllers
 		}
 	}
 
-	public class HttpUserAgentEndpointBehavior : IEndpointBehavior
+	public class HeaderCredentialsEndpointBehavior : IEndpointBehavior
 	{
 		public void AddBindingParameters(ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
 		{
@@ -51,7 +51,7 @@ namespace EmployeeMailUpdater.Controllers
 
 		public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
 		{
-			HttpUserAgentMessageInspector inspector = new HttpUserAgentMessageInspector();
+			HeaderCredentialsMessageInspector inspector = new HeaderCredentialsMessageInspector();
 			clientRuntime.MessageInspectors.Add(inspector);
 		}
 
@@ -64,19 +64,19 @@ namespace EmployeeMailUpdater.Controllers
 		}
 	}
 
-	public class HttpUserAgentBehaviorExtensionElement : BehaviorExtensionElement
+	public class HeaderCredentialsBehaviorExtensionElement : BehaviorExtensionElement
 	{
 		public override Type BehaviorType
 		{
 			get
 			{
-				return typeof(HttpUserAgentEndpointBehavior);
+				return typeof(HeaderCredentialsEndpointBehavior);
 			}
 		}
 
 		protected override object CreateBehavior()
 		{
-			return new HttpUserAgentEndpointBehavior();
+			return new HeaderCredentialsEndpointBehavior();
 		}
 	}
 
