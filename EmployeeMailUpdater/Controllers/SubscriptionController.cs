@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Http;
 using EmployeeMailUpdater.Sdk;
 
@@ -25,7 +24,7 @@ namespace EmployeeMailUpdater.Controllers
 			}
 		}
 
-		[HttpPut, Credentials]
+		[HttpPost, Credentials]
 		public IHttpActionResult Post([FromBody]AddScheduleChangesListenerInput model)
 		{
 			using (var internalClient = new TeleoptiCccSdkInternalClient())
@@ -43,6 +42,18 @@ namespace EmployeeMailUpdater.Controllers
 							DaysEndFromCurrentDate = model.DaysEndFromCurrentDate
 						}
 				});
+			}
+			return Ok();
+		}
+
+		[HttpDelete, Credentials]
+		public IHttpActionResult Delete([FromUri]string name)
+		{
+			using (var internalClient = new TeleoptiCccSdkInternalClient())
+			{
+				internalClient.Open();
+
+				internalClient.ExecuteCommand(new RevokeScheduleChangesListenerCommandDto { ListenerName = name});
 			}
 			return Ok();
 		}
