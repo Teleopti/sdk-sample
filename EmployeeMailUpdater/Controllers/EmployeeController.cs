@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http;
+using EmployeeMailUpdater.Sdk;
 
 namespace EmployeeMailUpdater.Controllers
 {
@@ -9,20 +10,20 @@ namespace EmployeeMailUpdater.Controllers
 		[HttpGet, Credentials]
 		public IHttpActionResult Get()
 		{
-			using (var organizationService = new Sdk.TeleoptiOrganizationServiceClient())
+			using (var organizationService = new TeleoptiOrganizationServiceClient())
 			{
 				organizationService.Open();
 				var myTeam = organizationService.GetLoggedOnPersonTeam(DateTime.UtcNow);
 				if (myTeam == null)
 				{
 					//Get first team from group page
-					var team = organizationService.GroupPageGroupsByQuery(new Sdk.GetGroupsForGroupPageAtDateQueryDto { PageId = new Guid("6CEB0041-0722-4B36-91DD-0A3B63C545CF"), QueryDate = new Sdk.DateOnlyDto { DateTime = DateTime.Today } }).FirstOrDefault();
+					var team = organizationService.GroupPageGroupsByQuery(new GetGroupsForGroupPageAtDateQueryDto { PageId = new Guid("6CEB0041-0722-4B36-91DD-0A3B63C545CF"), QueryDate = new Sdk.DateOnlyDto { DateTime = DateTime.Today } }).FirstOrDefault();
 					myTeam = new Sdk.TeamDto { Id = team.Id.GetValueOrDefault() };
 				}
 				if (myTeam != null)
 				{
-					var employees = organizationService.GetPersonsByQuery(new Sdk.GetPeopleByGroupPageGroupQueryDto { GroupPageGroupId = myTeam.Id.GetValueOrDefault(), QueryDate = new Sdk.DateOnlyDto { DateTime = DateTime.Today } });
-					return Ok(employees.Select(e => new { Name = e.Name, Id = e.Id, Email = e.Email }).ToArray());
+					var employees = organizationService.GetPersonsByQuery(new GetPeopleByGroupPageGroupQueryDto { GroupPageGroupId = myTeam.Id.GetValueOrDefault(), QueryDate = new Sdk.DateOnlyDto { DateTime = DateTime.Today } });
+					return Ok(employees.Select(e => new {e.Name, e.Id, e.Email }).ToArray());
 				}
 			}
 			return NotFound();
@@ -31,7 +32,7 @@ namespace EmployeeMailUpdater.Controllers
 		[HttpPut, Credentials]
 		public IHttpActionResult Put([FromBody]EmployeeEmailInput model)
 		{
-			using (var organizationService = new Sdk.TeleoptiOrganizationServiceClient())
+			using (var organizationService = new TeleoptiOrganizationServiceClient())
 			{
 				organizationService.Open();
 
